@@ -1,0 +1,16 @@
+Bài tập thực hành 2: Pallet coupling
+1. Thêm 1 trường dữ liệu created_date khi định nghĩa struct Kitty
++ Mỗi lần tạo kitty thì sẽ ghi nhận thông tin timestamp 
++ Gợi ý có thể sử dụng loosely coupling hoặc tightly coupling đều đc 
++ Tham khảo tài liệu: https://paritytech.github.io/substrate/latest/frame_support/traits/trait.Time.html
++ Tham khảo tài liệu: https://paritytech.github.io/substrate/latest/frame_support/traits/trait.UnixTime.html
+2. Hiện tại KittyOwner đang để lưu dưới dạng StorageMap với key là AccountId và value là Vec<dna> , BTC mong muốn sẽ giới hạn số lượng kitty mà 1 owner có thể sở hữu bằng cách sử dụng loosely coupling
++ Tham khảo: https://paritytech.github.io/substrate/latest/frame_support/traits/trait.Get.html
++ Tham khảo: https://paritytech.github.io/substrate/latest/frame_support/storage/bounded_vec/struct.BoundedVec.html
+
++ Cách dùng :https://github.com/paritytech/substrate/blob/master/frame/atomic-swap/src/lib.rs#L182
+
+3. DNA cần được sinh ra random (Optional)
++ Khi thực hiện tạo kitty thì dna sẽ sinh ra ngẫu nhiên 
++ Tham khảo: https://paritytech.github.io/substrate/latest/frame_support/traits/trait.Randomness.html
++ Lưu ý: sử dụng loosely coupling và implement trait
